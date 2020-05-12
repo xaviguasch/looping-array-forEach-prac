@@ -132,8 +132,8 @@
       ]
 
       /*
-  Looping Methods
-*/
+        Looping Methods
+      */
 
       function logTopping(topping, index, array) {
         const prevTopping = array[index - 1]
@@ -156,6 +156,32 @@
         console.log('--------------')
       }
       toppings.forEach(logTopping)
+
+      // Map, Filter, Reduce
+
+      console.clear()
+
+      function addArms(face) {
+        return `👋 ${face} 👋`
+      }
+
+      const toys = faces.map(addArms)
+
+      console.log(toys)
+
+      function bosify(name) {
+        return `${name} Bos`
+      }
+
+      function capitalize(word) {
+        return `${word[0].toUpperCase()}${word.slice(1)}`
+      }
+
+      const fullNames = ['wes', 'kait', 'poppy'].map(capitalize).map(bosify)
+      console.log(fullNames)
+
+      const orderTotalsWithTax = orderTotals.map((total) => total + total * 1.13)
+      console.log(orderTotalsWithTax)
     </script>
   </body>
 </html>
