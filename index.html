@@ -134,6 +134,28 @@
       /*
   Looping Methods
 */
+
+      function logTopping(topping, index, array) {
+        const prevTopping = array[index - 1]
+        const nextTopping = array[index + 1]
+
+        // log the topping
+        console.log(topping)
+
+        // log the previous topping if there is one
+        prevTopping ? console.log('da prev topping:', prevTopping) : null
+
+        // log the next topping if there is one
+        nextTopping ? console.log('da next topping:', nextTopping) : null
+
+        // if its the last item in the array, say goobye
+        index + 1 === array.length
+          ? console.log('goodbye!!!')
+          : console.log('getting the next topic')
+
+        console.log('--------------')
+      }
+      toppings.forEach(logTopping)
     </script>
   </body>
 </html>
