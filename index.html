@@ -203,6 +203,24 @@
       const over40 = cleanPeople.filter((person) => person.age > 40)
 
       console.log(over40)
+
+      function findById(id) {
+        return function isStudent(student) {
+          return student.id === id
+        }
+      }
+
+      function findByProp(prop, propWeAreLookingFor) {
+        return function isStudent(student) {
+          return student[prop] === propWeAreLookingFor
+        }
+      }
+
+      const student = students.find(findById('565a'))
+      console.log(student)
+
+      const student2 = students.find(findByProp('first_name', 'Dall'))
+      console.log(student2)
     </script>
   </body>
 </html>
