@@ -132,8 +132,8 @@
       ]
 
       /*
-        Looping Methods
-      */
+              Looping Methods
+            */
 
       function logTopping(topping, index, array) {
         const prevTopping = array[index - 1]
@@ -236,6 +236,30 @@
 
       const allOrders = orderTotals.reduce(tallyNumbers, 0)
       console.log(allOrders)
+
+      function inventoryReducer(acc, currV) {
+        console.log(`Looping over ${currV.type}`)
+
+        // increment the type by 1
+        acc[currV.type] = acc[currV.type]++ || 1
+        // if (acc[currV.type]) {
+        //   acc[currV.type]++
+        // } else {
+        //   acc[currV.type] = 1
+        // }
+        console.log(acc)
+
+        // return the acc, so the next loop can use it
+        return acc
+      }
+
+      const inventoryCounts = inventory.reduce(inventoryReducer, {})
+
+      console.log(inventoryCounts)
+
+      const totalInventoryPrice = inventory.reduce((acc, currV) => acc + currV.price, 0)
+
+      console.log(totalInventoryPrice)
     </script>
   </body>
 </html>
