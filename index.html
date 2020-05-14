@@ -221,6 +221,21 @@
 
       const student2 = students.find(findByProp('first_name', 'Dall'))
       console.log(student2)
+
+      // Reduce!
+      console.clear()
+
+      function tallyNumbers(acc, currV) {
+        console.log(`The current tally is ${currV} `)
+        console.log(`The current total is ${acc} `)
+        console.log('..............')
+
+        // return the current tally plus the amount of this order
+        return acc + currV
+      }
+
+      const allOrders = orderTotals.reduce(tallyNumbers, 0)
+      console.log(allOrders)
     </script>
   </body>
 </html>
